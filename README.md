@@ -1,2 +1,1 @@
-# amazon_clone
- 
+A full stack amazon clone e-commerce website built using ReactJS
