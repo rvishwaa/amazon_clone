@@ -49,6 +49,7 @@
 }
 
 .login_signInButton{
+    cursor: pointer;
     background-color: #f0c14b;
     border-radius: 2px;
     width: 100%;
@@ -60,6 +61,7 @@
 }
 
 .login_regButton{
+    cursor: pointer;
     border-color: darkgray;
     border-radius: 2px;
     width: 100%;

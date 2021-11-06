@@ -9,7 +9,7 @@ import { auth } from './firebase'
 function Header() {
     const [{basket, user}] = useStateValue();
 
-    const handleAuutentication = () => {
+    const handleAuthentication = () => {
         if(user){
             auth.signOut();
         }
@@ -32,7 +32,7 @@ function Header() {
             </div>
             <div className="header_nav">
                 <Link to={!user && "/login"} style={{ textDecoration: 'none' }}>
-                    <div onClick={handleAuutentication} className="header_option">
+                    <div onClick={handleAuthentication} className="header_option">
                         <span className="header_optionLineOne">
                             Hello {user ? user.email : 'Guest'}
                         </span>
@@ -41,6 +41,7 @@ function Header() {
                         </span>
                     </div>
                 </Link>
+                <Link to="/orders" style={{ textDecoration: 'none' }}>
                 <div className="header_option">
                     <span className="header_optionLineOne">
                         Returns
@@ -49,6 +50,7 @@ function Header() {
                         & Orders
                     </span>
                 </div>
+                </Link>
                 <div className="header_option">
                     <span className="header_optionLineOne">
                         Your

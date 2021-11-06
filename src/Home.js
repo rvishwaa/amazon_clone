@@ -1,15 +1,36 @@
 import React from 'react'
 import './Home.css'
 import Product from './Product'
+import SimpleImageSlider from "react-simple-image-slider";
 
 function Home() {
+    const images = [
+        { url: "https://m.media-amazon.com/images/I/711oH2cXRHL._SX3000_.jpg" },
+        { url: "https://m.media-amazon.com/images/I/715U9pQWhQL._SX3000_.jpg" },
+        { url: "https://m.media-amazon.com/images/I/61FuWeCuGCL._SX3000_.jpg" },
+        { url: "https://m.media-amazon.com/images/I/51zfKaODD9L._SX3000_.jpg" },
+        { url: "https://m.media-amazon.com/images/I/713ML75rA0L._SX3000_.jpg" },
+        { url: "https://m.media-amazon.com/images/I/51jKifqW4XL._SX3000_.jpg" },
+    ];
+
+    const scrollToTop = () =>{
+          window.scrollTo({
+            top: 0, 
+            behavior: 'smooth'
+        });
+    };
     return (
         <div className="home">
             <div className="home_container">
-                <img className="home_image"
-                    alt=""
-                    src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
-                />
+                <div className="slideShow">
+                    <SimpleImageSlider
+                        width="100%"
+                        height={504}
+                        images={images}
+                        autoPlay={true}
+                        autoPlayDelay={5.0}
+                    />
+                </div>
                 <div className="home_row">
                     <Product
                         id="12353212"
@@ -79,6 +100,45 @@ function Home() {
                         image="https://m.media-amazon.com/images/I/71GYLokH21L._SL1500_.jpg"
                         rating={4}   
                     />
+                </div>
+                <div onClick={scrollToTop} className="backToTop">
+                    <h>Back to top</h>
+                </div>
+                <div className="bottom_home">
+                    <div className="bottom_row">
+                        <h2>Get to know us</h2>
+                        <p>About Us</p>
+                        <p>Careers</p>
+                        <p>Press Releases</p>
+                        <p>Amazon cares</p>
+                        <p>Gift a Smile</p>
+                    </div>
+                    <div className="bottom_row">
+                        <h2>Connect with us</h2>
+                        <p>Facebook</p>
+                        <p>Twitter</p>
+                        <p>Instagram</p>
+                    </div>
+                    <div className="bottom_row">
+                        <h2>Make money with us</h2>
+                        <p>Sell on Amazon</p>
+                        <p>Sell under Amazon Accelerator</p>
+                        <p>Amazon Global Selling</p>
+                        <p>Become an Affiliate</p>
+                        <p>Fulfilment by Amazon</p>
+                        <p>Advertise Your Products</p>
+                        <p>Amazon Pay on Merchants</p>
+                    </div>
+                    <div className="bottom_row">
+                        <h2>Let Us Help You</h2>
+                        <p>COVID-19 and Amazon</p>
+                        <p>Your Account</p>
+                        <p>Returns Centre</p>
+                        <p>100% Purchase Protection</p>
+                        <p>Amazon App Download</p>
+                        <p>Amazon Assistant Download</p>
+                        <p>Help</p>
+                    </div>
                 </div>
             </div>
         </div>

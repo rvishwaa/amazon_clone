@@ -13,11 +13,19 @@
 }
 
 .checkoutProduct_info > button{
+    cursor: pointer;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 11px;
     background: #f0c14b;
     border: 1px solid;
     margin-top: 10px;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
+}
+
+.checkoutProduct_info > button:active{
+    transform: translateY(4px);
 }
 
 .checkoutProduct_image{
@@ -30,4 +38,9 @@
 .checkoutProduct_title{
     font-size: 17px;
     font-weight: 800;
+}
+
+.checkoutProduct:hover{
+    transform: scale(1.02);
+    transition: transform 0.4s;
 }
